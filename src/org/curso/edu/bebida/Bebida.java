@@ -25,4 +25,11 @@ public class Bebida {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String beber() {
+        return "Me encanta beber";
+    }
+
 }
+
+

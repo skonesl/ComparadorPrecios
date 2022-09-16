@@ -16,4 +16,10 @@ public class BebidaAlcoholica  extends Bebida{
     public void setGrados(double grados) {
         this.grados = grados;
     }
+
+    @Override
+    public String beber () {
+        return super.beber() + " porque soy un programa muy borracho";
+    }
+
 }

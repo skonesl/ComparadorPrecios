@@ -16,4 +16,10 @@ public class Refresco  extends Bebida{
     public void setSabor(String sabor) {
         this.sabor = sabor;
     }
+
+    @Override
+    public String beber () {
+        return "refrescos porque son muy sanos";
+    }
+
 }
