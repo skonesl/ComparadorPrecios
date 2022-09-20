@@ -22,4 +22,9 @@ public class BebidaAlcoholica  extends Bebida{
         return super.beber() + " porque soy un programa muy borracho";
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + " en este caso soy una bebida alcohólica con " +
+                "una graduación alcohólica de = " + grados + " grados";
+    }
 }

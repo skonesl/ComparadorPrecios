@@ -30,6 +30,12 @@ public class Bebida {
         return "Me encanta beber";
     }
 
+    @Override
+    public String toString() {
+        return "¡Hola! Soy el método toString. He creado una bebida con " +
+                "capacidad de = " + capacidad +
+                " y nombre= " + nombre;
+    }
 }
 
 

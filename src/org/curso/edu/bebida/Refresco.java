@@ -22,4 +22,9 @@ public class Refresco  extends Bebida{
         return "refrescos porque son muy sanos";
     }
 
+    @Override
+    public String toString() {
+        return super.toString() +  " En este caso soy un refresco de " +
+                "sabor='" + sabor;
+    }
 }

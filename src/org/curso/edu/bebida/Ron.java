@@ -16,4 +16,10 @@ public class Ron extends BebidaAlcoholica{
     public void setPais(String pais) {
         this.pais = pais;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " En concreto un ron de " +
+                "pais= " + pais;
+    }
 }

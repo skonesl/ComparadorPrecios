@@ -16,4 +16,10 @@ public class Whisky extends BebidaAlcoholica{
     public void setAnios(int anios) {
         this.anios = anios;
     }
+
+    @Override
+    public String toString() {
+        return " En concreto un Whisky de " +
+                "anios=" + anios;
+    }
 }
