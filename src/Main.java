@@ -42,5 +42,7 @@ public class Main {
 
         superm.precioMasBajo(superm.getProductos());
 
+        superm.listaOrdenada(superm.getProductos());
+
     }
 }

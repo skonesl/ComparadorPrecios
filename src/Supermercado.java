@@ -54,10 +54,10 @@ public class Supermercado {
     }
 
     //TODO: Metodo para ordenar la lista no consigo que funcione
-//    public void listaOrdenada (List <Producto> productos) {
-//
-//        productos.sort(Comparator.naturalOrder().reversed());
-//
-//    }
+    public void listaOrdenada (List <Producto> productos) {
+
+        List<Producto> sortedList = productos.stream().sorted().collect(Collectors.toList());
+        System.out.println("After Sorting: "+ sortedList);
+    }
 
 }
