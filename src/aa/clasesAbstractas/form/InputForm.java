@@ -1,4 +1,4 @@
-package aa.borja.clasesAbstractas;
+package aa.clasesAbstractas.form;
 
 public class InputForm extends ElementoForm {
 

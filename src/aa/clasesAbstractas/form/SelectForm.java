@@ -1,6 +1,6 @@
-package aa.borja.clasesAbstractas;
+package aa.clasesAbstractas.form;
 
-import aa.borja.clasesAbstractas.select.Opcion;
+import aa.clasesAbstractas.form.select.Opcion;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package aa.borja.validador;
+package aa.clasesAbstractas.validador;
 
 abstract public class Validador {
 

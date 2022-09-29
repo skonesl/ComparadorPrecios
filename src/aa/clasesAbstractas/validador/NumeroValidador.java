@@ -1,4 +1,4 @@
-package aa.borja.validador;
+package aa.clasesAbstractas.validador;
 
 public class NumeroValidador extends Validador{
 

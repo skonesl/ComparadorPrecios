@@ -1,4 +1,4 @@
-package aa.borja.clasesAbstractas;
+package aa.clasesAbstractas.form;
 
 abstract public class ElementoForm {
 
