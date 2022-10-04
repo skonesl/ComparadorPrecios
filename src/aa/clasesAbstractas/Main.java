@@ -5,6 +5,7 @@ import aa.clasesAbstractas.form.InputForm;
 import aa.clasesAbstractas.form.SelectForm;
 import aa.clasesAbstractas.form.TextareaForm;
 import aa.clasesAbstractas.form.select.Opcion;
+import aa.clasesAbstractas.validador.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,13 +14,24 @@ public class Main {
     public static void main(String[] args) {
 
         InputForm username = new InputForm("username");
+        username.addValidador(new RequeridoValidador());
+
         InputForm password = new InputForm("clave", "password");
+        password.addValidador(new RequeridoValidador())
+                .addValidador(new LargoValidador(6, 12));
+
         InputForm email = new InputForm("email", "email");
+        email.addValidador(new RequeridoValidador())
+                .addValidador(new EmailValidador());
+
         InputForm edad = new InputForm("edad", "number");
+        edad.addValidador(new NumeroValidador());
 
         TextareaForm experiencia = new TextareaForm("exp", 5, 9);
 
         SelectForm lenguaje = new SelectForm("lenguaje");
+        lenguaje.addValidador(new NoNuloValidador());
+
         Opcion java = new Opcion("1", "Java");
         lenguaje.addOpcion(java)
             .addOpcion(new Opcion("2", "Python"))
@@ -36,7 +48,7 @@ public class Main {
 
         saludar.setValor("Este campo está deshabilitado");
         username.setValor("borja");
-        password.setValor("programador");
+        password.setValor("programa");
         email.setValor("programador@putoamo.com");
         edad.setValor("28");
         experiencia.setValor("Influmierder durante 7 años con mi propio medio de tecnología");
@@ -50,6 +62,12 @@ public class Main {
         elementos.forEach(e -> {
             System.out.println(e.dibujarHtml());
             System.out.println("<br>");
+        });
+
+        elementos.forEach(e -> {
+            if(!e.esValido()) {
+                e.getErrores().forEach(err -> System.out.println(e.getNombre() + " = " + err));
+            }
         });
 
     }

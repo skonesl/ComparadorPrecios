@@ -53,13 +53,46 @@ public class Libro {
 
         boolean disponible;
 
-        if (numEjemplares >= numPrestados) {
-            disponible = true;
-            numPrestados++;
+        if (numEjemplares > 0) {
+            if (numEjemplares >= numPrestados) {
+                disponible = true;
+                numPrestados++;
+            } else {
+                disponible = false;
+            }
         } else {
             disponible = false;
         }
+
         return disponible;
     }
 
+    public boolean devolucion () {
+
+        boolean disponible;
+
+        if (numEjemplares > 0) {
+            if (numEjemplares <= numPrestados) {
+                disponible = true;
+                numPrestados--;
+            } else {
+                disponible = false;
+            }
+        } else {
+            disponible = false;
+        }
+
+        return disponible;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", numEjemplares=" + numEjemplares +
+                ", numPrestados=" + numPrestados +
+                '}';
+    }
 }

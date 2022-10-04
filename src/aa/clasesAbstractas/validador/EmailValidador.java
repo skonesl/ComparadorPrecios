@@ -3,7 +3,7 @@ package aa.clasesAbstractas.validador;
 public class EmailValidador extends Validador{
 
     protected String mensaje = "El formato del Email no es válido";
-    private final static String EMAIL_REGEX ="ˆ(.+)@(.+)$";
+    private final static String EMAIL_REGEX ="^(.+)@(.+)$";
 
     @Override
     public void setMensaje(String mensaje) {
