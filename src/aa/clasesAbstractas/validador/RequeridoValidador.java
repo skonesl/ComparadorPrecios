@@ -2,7 +2,7 @@ package aa.clasesAbstractas.validador;
 
 public class RequeridoValidador extends Validador{
 
-    protected String mensaje ="El campo es obligatorio";
+    protected String mensaje ="El campo %s es obligatorio";
 
     @Override
     public void setMensaje(String mensaje) {
