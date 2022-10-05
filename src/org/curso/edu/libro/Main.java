@@ -41,7 +41,7 @@ public class Main {
                      for (int i = 0; i < listLibros.size(); i++) {
                          System.out.print(i + ". " + listLibros.get(i).getTitulo() + " - ");
                      }
-
+                     System.out.println();
                      int opcion;
                      System.out.print("Elija el libro del que han devuelto una unidad: ");
                      opcion = sc.nextInt();
@@ -53,8 +53,13 @@ public class Main {
                              opcion = sc.nextInt();
                          }
                      }
-
+                     listLibros.get(opcion).devolucion();
+                     System.out.println("Devolución realizada correctamente. Tas este movimiento quedan " + (listLibros.get(opcion).getNumEjemplares() - listLibros.get(opcion).getNumPrestados()) + " libros");
+                     System.out.println("De este libro hay un total de " + listLibros.get(opcion).getNumEjemplares());
+                     System.out.println("Actualmente quedan en préstamo " + listLibros.get(opcion).getNumPrestados());
                      break;
+
+                 case 3:
              }
 
 
