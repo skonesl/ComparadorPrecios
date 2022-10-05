@@ -37,7 +37,23 @@ public class Main {
                      listLibros.add(new Libro(libro.getTitulo(), libro.getAutor(), libro.getNumEjemplares(), libro.getNumPrestados()));
                      break;
                  case 2:
-                     System.out.println(listLibros.get(0).toString());
+
+                     for (int i = 0; i < listLibros.size(); i++) {
+                         System.out.print(i + ". " + listLibros.get(i).getTitulo() + " - ");
+                     }
+
+                     int opcion;
+                     System.out.print("Elija el libro del que han devuelto una unidad: ");
+                     opcion = sc.nextInt();
+
+                     if (opcion > listLibros.size()) {
+                         System.out.println("El libro introducido no existe");
+                         while (opcion > listLibros.size()) {
+                             System.out.print("Vuelva a introducir una opción");
+                             opcion = sc.nextInt();
+                         }
+                     }
+
                      break;
              }
 
