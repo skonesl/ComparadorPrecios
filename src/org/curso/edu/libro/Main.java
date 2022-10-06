@@ -54,14 +54,48 @@ public class Main {
                          }
                      }
                      listLibros.get(opcion).devolucion();
-                     System.out.println("Devolución realizada correctamente. Tas este movimiento quedan " + (listLibros.get(opcion).getNumEjemplares() - listLibros.get(opcion).getNumPrestados()) + " libros");
+                     System.out.println("Devolución realizada correctamente. Tras este movimiento quedan " + (listLibros.get(opcion).getNumEjemplares() - listLibros.get(opcion).getNumPrestados()) + " libros");
                      System.out.println("De este libro hay un total de " + listLibros.get(opcion).getNumEjemplares());
                      System.out.println("Actualmente quedan en préstamo " + listLibros.get(opcion).getNumPrestados());
                      break;
 
                  case 3:
-             }
+                     for (int i = 0; i < listLibros.size(); i++) {
+                         System.out.print(i + ". " + listLibros.get(i).getTitulo() + " - ");
+                     }
+                     System.out.println();
+                     int libroElegido;
+                     System.out.print("Elija el libro del que han pedido prestado una unidad: ");
+                     libroElegido = sc.nextInt();
 
+                     if (libroElegido > listLibros.size()) {
+                         System.out.println("El libro introducido no existe");
+                         while (libroElegido > listLibros.size()) {
+                             System.out.print("Vuelva a introducir una opción");
+                             libroElegido = sc.nextInt();
+                         }
+                     }
+
+                     if (listLibros.get(libroElegido).prestamo() == true) {
+
+                         listLibros.get(libroElegido).prestamo();
+
+                         System.out.println("Préstamo realizado correctamente. Tras este movimiento quedan " + (listLibros.get(libroElegido).getNumEjemplares() - listLibros.get(libroElegido).getNumPrestados()) + " libros");
+                         System.out.println("De este libro hay un total de " + listLibros.get(libroElegido).getNumEjemplares());
+                         System.out.println("Actualmente quedan en préstamo " + listLibros.get(libroElegido).getNumPrestados());
+                     } else if (listLibros.get(libroElegido).prestamo() == false) {
+                         System.out.println("No nos quedan más unidades. Vuelva más tarde");
+                     }
+                     break;
+                 case 4:
+                     for (Libro listLibro : listLibros) {
+                         System.out.println(listLibro.toString());
+                     }
+                     break;
+                 case default:
+                     System.out.println("Opción incorrecta. Por favor, vuelva a intentarlo");
+                     break;
+             }
 
              System.out.print("Si desea continuar con la ejecución del programa pulse 0. De lo contrario pulse cualquier otro número: ");
              numSeguir = sc.nextInt();
@@ -72,6 +106,6 @@ public class Main {
                  seguir = false;
              }
 
-        } while (seguir == true);
+        } while (seguir);
     }
 }

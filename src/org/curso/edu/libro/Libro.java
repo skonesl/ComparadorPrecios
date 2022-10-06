@@ -53,7 +53,7 @@ public class Libro {
 
         boolean disponible;
 
-        if (numEjemplares > 0) {
+        if (numEjemplares > 0 && numEjemplares > numPrestados) {
             if (numEjemplares >= numPrestados) {
                 disponible = true;
                 numPrestados++;
