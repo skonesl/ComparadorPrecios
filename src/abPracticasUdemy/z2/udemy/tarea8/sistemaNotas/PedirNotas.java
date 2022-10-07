@@ -1,4 +1,4 @@
-package z2.udemy.tarea8.sistemaNotas;
+package abPracticasUdemy.z2.udemy.tarea8.sistemaNotas;
 
 import java.util.Scanner;
 
