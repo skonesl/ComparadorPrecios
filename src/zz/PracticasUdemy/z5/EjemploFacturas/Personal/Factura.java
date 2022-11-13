@@ -15,14 +15,6 @@ public class Factura {
     public Factura() {
     }
 
-    public Factura(Cliente cliente, List<ItemFactura> listaFacturas1, int folio, String descr, Date fecha) {
-        this.cliente = cliente;
-        this.listaFacturas1 = listaFacturas1;
-        this.folio = folio;
-        this.descr = descr;
-        this.fecha = fecha;
-    }
-
     public Cliente getCliente() {
         return cliente;
     }
@@ -76,12 +68,27 @@ public class Factura {
 
     public String verDetalle () {
 
-        StringBuilder sb = new StringBuilder("El cliente ")
-                .append(cliente.getNombre())
-                .append("con DNI ")
-                .append(cliente.getNif());
+        StringBuilder sb = new StringBuilder("Factura del cliente ").append(cliente.getNombre().toUpperCase())
+                .append(" con DNI ").append(cliente.getNif())
+                .append("\n Imprimiendo la factura con nº ").append(folio)
+                .append(" y descripción ").append(descr)
+                .append(" formalizada en la fecha: ").append(fecha)
+                .append("\n")
+                .append(" Los productos recogidos en esta factura son: ")
+                .append("\n=========================================================\n")
+                .append("=  NOMBRE        CODIGO         PRECIO       CANTIDAD   =")
+                .append("\n=========================================================\n");
 
-        return null;
+        for (ItemFactura listaItems : listaFacturas1) {
+
+            sb.append(listaItems.getProducto().getNombre()).append(" --- ").append(listaItems.getProducto().getCodigo()).append(" --- ").append(listaItems.getProducto().getPrecio())
+                    .append(" --- ").append(listaItems.getCantidad()).append("\n");
+        }
+
+        sb.append("El precio total de esta factura asciende a: ")
+                .append(calcularTotal());
+
+        return sb.toString();
     }
 
 }

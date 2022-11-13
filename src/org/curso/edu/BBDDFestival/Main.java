@@ -9,6 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int numWhile = 0;
         int opcionInicio;
+        boolean esRepetido = false;
 
         try {
             Class.forName("org.sqlite.JDBC");
@@ -48,18 +49,33 @@ public class Main {
                         stmt.executeUpdate(sql2);
                         stmt.close();
 
-                        //INSERTAMOS DATOS
-                        stmt = connection.createStatement();
-                        String sql = "INSERT INTO GRUPOS (NOMBRE,PRECIO) "
-                                + "VALUES ('" + artista.getNombre() + "', " + artista.getCosteActuacion() + ");";
+                        ResultSet rs = stmt.executeQuery("SELECT * FROM GRUPOS");
 
-                        stmt.executeUpdate(sql);
-                        System.out.println("Datos insertados correctamente");
-                        stmt.close();
+                        while (rs.next()) {
+                            String nombre = rs.getString(1);
+
+                            if (nombre.equals(artista.getNombre())) {
+                                System.out.println("Nombre ya introducido en la Base de Datos, pruebe con otro");
+                                esRepetido = true;
+                            }
+
+                        }
+
+                        if (esRepetido == false) {
+                            //INSERTAMOS DATOS
+                            stmt = connection.createStatement();
+                            String sql = "INSERT INTO GRUPOS (NOMBRE,PRECIO) "
+                                    + "VALUES ('" + artista.getNombre() + "', " + artista.getCosteActuacion() + ");";
+
+                            stmt.executeUpdate(sql);
+                            System.out.println("Datos insertados correctamente");
+                            stmt.close();
+                        }
+                        esRepetido = false;
                         break;
                     case 2:
                         stmt = connection.createStatement();
-                        ResultSet rs = stmt.executeQuery("SELECT * FROM GRUPOS");
+                        rs = stmt.executeQuery("SELECT * FROM GRUPOS");
 
                         while (rs.next()) {
                             String nombre = rs.getString(1);
