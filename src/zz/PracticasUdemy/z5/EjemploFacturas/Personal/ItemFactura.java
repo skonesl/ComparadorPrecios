@@ -6,6 +6,7 @@ public class ItemFactura {
     private int cantidad;
 
     public ItemFactura() {
+
     }
 
     public ItemFactura(Producto producto, int cantidad) {

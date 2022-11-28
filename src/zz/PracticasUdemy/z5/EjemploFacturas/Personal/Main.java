@@ -30,9 +30,13 @@ public class Main {
         System.out.println("Se autocompleta la fecha de la factura ");
         primeraFactura.setFecha(new Date());
 
-        do {
+        ItemFactura itm = new ItemFactura();
+        ItemFactura itm2 = itm;
+//        System.out.println(itm);
+//        System.out.println(itm2);
 
-            List<ItemFactura> aux = new ArrayList<>();
+       List<ItemFactura> aux = new ArrayList<>();
+        do {
 
             System.out.print("Introduce el código del producto: ");
             producto.setCodigo(sc.nextInt());
@@ -48,14 +52,17 @@ public class Main {
             itemFactura.setProducto(producto);
             System.out.print("Introduce la cantidad de articulos de este producto: ");
             itemFactura.setCantidad(sc.nextInt());
-            primeraFactura.listaFacturas1.add(itemFactura);
+            aux.add(itemFactura);
 
             System.out.print("Pulse 0 para salir o cualquier otro número para introducir un nuevo producto a esta factura: ");
             contador = sc.nextInt();
             sc.nextLine();
+            itemFactura = new ItemFactura();
+            producto = new Producto();
 
         } while (contador != 0);
 
+        primeraFactura.setListaFacturas1(aux);
         System.out.println(primeraFactura.verDetalle());
 
     }
