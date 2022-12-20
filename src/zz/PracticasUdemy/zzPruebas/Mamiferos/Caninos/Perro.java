@@ -1,6 +1,4 @@
-package zz.PracticasUdemy.T19.ClasesAbstractas.Tarea24.Mamiferos.Caninos;
-
-import zz.PracticasUdemy.T19.ClasesAbstractas.Tarea24.Mamiferos.Mamifero;
+package zz.PracticasUdemy.zzPruebas.Mamiferos.Caninos;
 
 public class Perro extends Canino {
 

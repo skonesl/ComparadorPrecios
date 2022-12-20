@@ -1,6 +1,6 @@
-package zz.PracticasUdemy.T19.ClasesAbstractas.Tarea24.Mamiferos.Caninos;
+package zz.PracticasUdemy.zzPruebas.Mamiferos.Caninos;
 
-public class Lobo extends Canino{
+public class Lobo extends Canino {
 
     private int camada;
     private String especieLobo;

@@ -1,6 +1,6 @@
-package zz.PracticasUdemy.T19.ClasesAbstractas.Tarea24.Mamiferos.Felinos;
+package zz.PracticasUdemy.zzPruebas.Mamiferos.Felinos;
 
-public class Guepardo  extends Felino{
+public class Guepardo  extends Felino {
 
     public Guepardo(String habitat, float altura, float largo, float peso, String nombreCientifico) {
         super(habitat, altura, largo, peso, nombreCientifico);

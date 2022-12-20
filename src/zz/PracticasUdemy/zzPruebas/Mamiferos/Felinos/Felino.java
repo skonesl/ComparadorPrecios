@@ -1,6 +1,6 @@
-package zz.PracticasUdemy.T19.ClasesAbstractas.Tarea24.Mamiferos.Felinos;
+package zz.PracticasUdemy.zzPruebas.Mamiferos.Felinos;
 
-import zz.PracticasUdemy.T19.ClasesAbstractas.Tarea24.Mamiferos.Mamifero;
+import zz.PracticasUdemy.zzPruebas.Mamiferos.Mamifero;
 
 public class Felino extends Mamifero {
 

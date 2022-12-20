@@ -1,6 +1,6 @@
-package zz.PracticasUdemy.T19.ClasesAbstractas.Tarea24.Mamiferos.Felinos;
+package zz.PracticasUdemy.zzPruebas.Mamiferos.Felinos;
 
-public class Leon extends Felino{
+public class Leon extends Felino {
 
     private int manada;
     private float potenciaRugido;
